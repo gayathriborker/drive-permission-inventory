@@ -13,20 +13,20 @@ workspace:
 
   # If true: scan all active users' My Drives
   # If false: only scan the users listed under my_drives.users_to_scan
-  scan_all_users: true
+  scan_all_users: false
 
 my_drives:
   enabled: true
 
   # Used when workspace.scan_all_users is false
   users_to_scan:
-    - "you@yourdomain.com"
-    - "pmo@yourdomain.com"
-    - "pm@yourdomain.com"
-    - "ceo@yourdomain.com"
+    - "anuj.mishra@tekyz.com"
+  
 
 shared_drives:
-  enabled: true
+  enabled: false
+  include_all: false
+  include_drive_ids: []
 
   # If true: scan all shared drives in the domain
   include_all: true
