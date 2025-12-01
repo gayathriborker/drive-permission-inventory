@@ -1,1 +1,36 @@
+name: Drive Permissions Inventory
+
+on:
+  schedule:
+    # Every day at 18:30 IST (13:00 UTC)
+    - cron: "0 13 * * *"
+  workflow_dispatch: {}  # allow manual runs
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+
+    env:
+      # Optional: change if you use a different config path
+      CONFIG_PATH: config/workspace_config.yaml
+      SERVICE_ACCOUNT_FILE: service-account.json
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Create service account key file
+        run: |
+          echo '${{ secrets.GDRIVE_KEY }}' > service-account.json
+
+      - name: Run Drive inventory script
+        run: python drive_inventory.py
 
