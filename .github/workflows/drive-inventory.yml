@@ -3,7 +3,7 @@ name: Drive Permissions Inventory
 on:
   schedule:
     # Every day at 18:30 IST (13:00 UTC)
-    - cron: "0 13 * * *"
+    - cron: "0 13 1 * *"
   workflow_dispatch: {}  # allow manual runs
 
 jobs:
