@@ -1,1 +1,37 @@
+workspace:
+  # Google Workspace domain
+  domain: "tekyz.com"
+
+  # Super admin / delegated admin email
+  delegated_admin: "gayathri@tekyz.com"
+
+  # The Google Sheet where we write inventory
+  spreadsheet_id: "1-e0oDxoTpQyi4rPoucE2zsaaXCBJD_qb9Kf-GWKEDc0"
+
+  # Sheet/tab name inside the spreadsheet
+  sheet_name: "Inventory"
+
+  # If true: scan all active users' My Drives
+  # If false: only scan the users listed under my_drives.users_to_scan
+  scan_all_users: true
+
+my_drives:
+  enabled: true
+
+  # Used when workspace.scan_all_users is false
+  users_to_scan:
+    - "you@yourdomain.com"
+    - "pmo@yourdomain.com"
+    - "pm@yourdomain.com"
+    - "ceo@yourdomain.com"
+
+shared_drives:
+  enabled: true
+
+  # If true: scan all shared drives in the domain
+  include_all: true
+
+  # Optionally, you can list specific shared drive IDs to include
+  # If non-empty, only these IDs are scanned
+  include_drive_ids: []
 
